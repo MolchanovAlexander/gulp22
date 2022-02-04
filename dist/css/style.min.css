@@ -1,9 +1,1 @@
-body {
-  background-color: blueviolet;
-  width: 50vw;
-  margin: 50px auto;
-  text-align: center;
-}
-body span {
-  color: chartreuse;
-}
+.no-webp body{background:url(../img/gulp3.jpg) 0 0 no-repeat}body{font-size:22px;width:50vw;margin:50px auto;height:50vh;text-align:center}body span{color:#a1078d;line-height:50px}@media (max-width:768px){span{font-size:26px}span{background-color:red}}.webp body{background:url(../img/gulp3.webp) 0 0 no-repeat}
