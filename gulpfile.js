@@ -26,6 +26,8 @@ import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
 
 
 // watcher
@@ -46,9 +48,15 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images)
 // scenario bilder
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+
 //export scenarious
 export { dev }
 export { build }
+export { deployZIP }
+export { deployFTP }
 
 
 gulp.task('default', dev);
